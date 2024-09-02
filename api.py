@@ -22,6 +22,7 @@ movies = [
 
 @app.route('/api/movies', methods=['GET'])
 def get_movies():
+    movies = Movie.query.all()
     return jsonify(movies)
 
 @app.route('/api/movies/<int:id>', methods=['GET'])
